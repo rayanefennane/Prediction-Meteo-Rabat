@@ -1,1 +1,1 @@
-# Pr-diction-M-t-o-Rabat
+# Prediction-Meteo-Rabat
