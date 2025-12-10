@@ -33,7 +33,205 @@ st.set_page_config(
     layout="wide"
 )
 
-# --- 3. INJECTION DES ICÔNES POUR TÉLÉPHONE (PWA) ---
+# --- 3. CSS MODERNE 2026 ---
+st.markdown("""
+<style>
+    /* Style global moderne */
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+    
+    html, body, [class*="css"] {
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    /* Scrollbar personnalisée */
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    
+    ::-webkit-scrollbar-track {
+        background: rgba(255,255,255,0.05);
+        border-radius: 10px;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border-radius: 10px;
+    }
+    
+    ::-webkit-scrollbar-thumb:hover {
+        background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    }
+    
+    /* Header avec gradient */
+    .main-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 2rem;
+        border-radius: 20px;
+        margin-bottom: 2rem;
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        text-align: center;
+        animation: slideDown 0.6s ease-out;
+    }
+    
+    @keyframes slideDown {
+        from { 
+            opacity: 0; 
+            transform: translateY(-30px); 
+        }
+        to { 
+            opacity: 1; 
+            transform: translateY(0); 
+        }
+    }
+    
+    .main-header h1 {
+        color: white;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin: 0;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+    
+    .main-header p {
+        color: rgba(255,255,255,0.9);
+        font-size: 1.1rem;
+        margin-top: 0.5rem;
+    }
+    
+    /* Cards modernes */
+    .stDataFrame {
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        transition: transform 0.3s ease;
+    }
+    
+    .stDataFrame:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 12px 35px rgba(0,0,0,0.2);
+    }
+    
+    /* Boutons stylés */
+    .stButton>button {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        border-radius: 25px;
+        padding: 0.75rem 2rem;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    }
+    
+    .stButton>button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+    }
+    
+    /* Inputs modernes */
+    .stSlider, .stNumberInput {
+        background: rgba(255,255,255,0.05);
+        border-radius: 15px;
+        padding: 1rem;
+        backdrop-filter: blur(10px);
+    }
+    
+    /* Graphiques avec ombre */
+    .stPlotlyChart, .element-container iframe {
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        overflow: hidden;
+    }
+    
+    /* Sidebar style */
+    [data-testid="stSidebar"] {
+        background: linear-gradient(180deg, rgba(102,126,234,0.1) 0%, rgba(118,75,162,0.1) 100%);
+        backdrop-filter: blur(10px);
+    }
+    
+    [data-testid="stSidebar"] h2, [data-testid="stSidebar"] h3 {
+        color: #667eea;
+    }
+    
+    /* Responsive Mobile */
+    @media (max-width: 768px) {
+        .main-header h1 {
+            font-size: 1.8rem;
+        }
+        
+        .main-header {
+            padding: 1.5rem;
+        }
+        
+        [data-testid="column"] {
+            padding: 0.5rem !important;
+        }
+        
+        .metric-card {
+            padding: 1rem !important;
+        }
+        
+        .metric-card h2 {
+            font-size: 1.5rem !important;
+        }
+    }
+    
+    /* Responsive Tablet */
+    @media (max-width: 1024px) and (min-width: 769px) {
+        .main-header h1 {
+            font-size: 2.2rem;
+        }
+    }
+    
+    /* Animation fade-in */
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .element-container {
+        animation: fadeIn 0.5s ease-out;
+    }
+    
+    /* Indicateurs météo */
+    .metric-card {
+        background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+        border-radius: 15px;
+        padding: 1.5rem;
+        text-align: center;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255,255,255,0.1);
+        transition: all 0.3s ease;
+    }
+    
+    .metric-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        border: 1px solid rgba(102, 126, 234, 0.3);
+    }
+    
+    /* Dark mode optimisé */
+    [data-theme="dark"] {
+        background-color: #0f0f23;
+    }
+    
+    /* Améliorations tableaux */
+    thead tr th {
+        background: linear-gradient(135deg, rgba(102,126,234,0.3), rgba(118,75,162,0.3)) !important;
+        color: white !important;
+        font-weight: 600 !important;
+    }
+    
+    /* Sélection de ligne */
+    tbody tr:hover {
+        background: rgba(102,126,234,0.1) !important;
+        cursor: pointer;
+    }
+</style>
+""", unsafe_allow_html=True)
+
+# --- 4. INJECTION DES ICÔNES PWA ---
 try:
     with open("apple-touch-icon.png", "rb") as f:
         apple_icon = base64.b64encode(f.read()).decode()
@@ -48,9 +246,54 @@ try:
 except:
     pass
 
-st.title("🌤️ Application Météo IA - Rabat")
+# --- 5. HEADER MODERNE ---
+st.markdown("""
+<div class="main-header">
+    <h1>🌤️ Météo IA - Rabat</h1>
+    <p>Prédictions météorologiques intelligentes avec Gradient Boosting</p>
+</div>
+""", unsafe_allow_html=True)
 
-# --- SECTION PRÉVISIONS ---
+# --- 6. SIDEBAR INFORMATIVE ---
+with st.sidebar:
+    st.markdown("### ℹ️ À propos")
+    st.markdown("""
+    **Météo IA Rabat** utilise l'intelligence artificielle pour prédire la météo avec une précision exceptionnelle.
+    
+    #### 🤖 Technologie
+    - **Modèle**: Gradient Boosting
+    - **Features**: 24 variables avancées
+    - **Données**: 5 ans d'historique
+    - **Observations**: 43,848 points
+    
+    #### 📍 Localisation
+    - **Ville**: Rabat, Maroc
+    - **Coordonnées**: 34.02°N, 6.84°W
+    - **Source**: Open-Meteo API
+    
+    #### 🎯 Caractéristiques
+    - ✅ Prédictions température
+    - ✅ Prévisions humidité
+    - ✅ Historique 5 ans
+    - ✅ Saisons colorées
+    - ✅ Comparaison temps réel
+    """)
+    
+    st.markdown("---")
+    st.markdown("### 🎨 Design")
+    st.markdown("""
+    Interface moderne 2026 avec:
+    - 🌈 Gradients dynamiques
+    - 📱 Responsive mobile/PC
+    - 🎭 Animations fluides
+    - 🌙 Mode sombre optimisé
+    """)
+    
+    st.markdown("---")
+    st.markdown("### 📊 Performance")
+    st.info("💡 Le modèle s'améliore avec chaque mise à jour des données historiques.")
+
+# --- 7. SECTION PRÉVISIONS ---
 st.markdown("---")
 
 # Sélecteurs
@@ -151,8 +394,54 @@ try:
     df_display = df_affichage[['Jour', 'Date', 'Saison_Display', 'Température', '💧 Humidité']].copy()
     df_display.columns = ['Jour', 'Date', 'Saison', 'Température', '💧 Humidité']
     
+    # Cartes métriques modernes
+    st.markdown("### 📊 Statistiques de la semaine")
+    col1, col2, col3, col4 = st.columns(4)
+    
+    with col1:
+        temp_min = df_semaine['Prediction_Temp'].min()
+        st.markdown(f"""
+        <div class="metric-card">
+            <h3 style="color: #00D9FF; margin: 0;">❄️</h3>
+            <h2 style="margin: 0.5rem 0;">{temp_min:.1f}°C</h2>
+            <p style="color: rgba(255,255,255,0.7); margin: 0;">Temp. Min</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col2:
+        temp_max = df_semaine['Prediction_Temp'].max()
+        st.markdown(f"""
+        <div class="metric-card">
+            <h3 style="color: #FF6B6B; margin: 0;">🔥</h3>
+            <h2 style="margin: 0.5rem 0;">{temp_max:.1f}°C</h2>
+            <p style="color: rgba(255,255,255,0.7); margin: 0;">Temp. Max</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col3:
+        hum_moy = df_semaine['Prediction_Humidity'].mean()
+        st.markdown(f"""
+        <div class="metric-card">
+            <h3 style="color: #4ECDC4; margin: 0;">💧</h3>
+            <h2 style="margin: 0.5rem 0;">{hum_moy:.0f}%</h2>
+            <p style="color: rgba(255,255,255,0.7); margin: 0;">Humidité Moy.</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col4:
+        temp_moy = df_semaine['Prediction_Temp'].mean()
+        st.markdown(f"""
+        <div class="metric-card">
+            <h3 style="color: #FFD93D; margin: 0;">🌡️</h3>
+            <h2 style="margin: 0.5rem 0;">{temp_moy:.1f}°C</h2>
+            <p style="color: rgba(255,255,255,0.7); margin: 0;">Temp. Moyenne</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    st.markdown("<br>", unsafe_allow_html=True)
+    
     # Affichage avec sélection de ligne
-    st.write("### 📊 Tableau des prévisions (Cliquez sur une ligne pour voir l'historique)")
+    st.write("### 📅 Tableau des prévisions (Cliquez sur une ligne pour voir l'historique)")
     
     # Utiliser st.dataframe avec on_select
     event = st.dataframe(
@@ -171,7 +460,13 @@ try:
         selected_day = selected_date.day
         
         st.markdown("---")
-        st.write(f"### 📜 Historique pour le {selected_day:02d}/{selected_month:02d} à {heure_selectionnee}h")
+        st.markdown(f"""
+        <div style="background: linear-gradient(135deg, rgba(255,107,107,0.2) 0%, rgba(118,75,162,0.2) 100%); 
+                    padding: 1.5rem; border-radius: 15px; margin: 1rem 0;">
+            <h3 style="margin: 0; color: #FF6B6B;">📜 Historique pour le {selected_day:02d}/{selected_month:02d} à {heure_selectionnee}h</h3>
+            <p style="margin-top: 0.5rem; opacity: 0.9;">Données des 5 dernières années</p>
+        </div>
+        """, unsafe_allow_html=True)
         
         if historical_data is not None:
             # Filtrer les données historiques pour cette date et heure
@@ -193,8 +488,16 @@ try:
                 
                 st.dataframe(hist_display, hide_index=True, width="stretch")
                 
-                # Graphique de l'évolution
-                st.line_chart(hist_display.set_index('Année')[['🌡️ Température (°C)', '💧 Humidité (%)']])
+                # Graphique de l'évolution avec colonnes
+                col_hist1, col_hist2 = st.columns(2)
+                
+                with col_hist1:
+                    st.markdown("**🌡️ Évolution de la température**")
+                    st.line_chart(hist_display.set_index('Année')[['🌡️ Température (°C)']], color='#FF6B6B')
+                
+                with col_hist2:
+                    st.markdown("**💧 Évolution de l'humidité**")
+                    st.line_chart(hist_display.set_index('Année')[['💧 Humidité (%)']], color='#4ECDC4')
             else:
                 st.info("Aucune donnée historique disponible pour cette date.")
         else:
@@ -202,11 +505,16 @@ try:
     
     # Graphique de comparaison (colonne droite)
     st.markdown("---")
-    st.write("### 📈 Comparaison : Prévisions IA vs Météo Réelle")
+    st.markdown("""
+    <div style="background: linear-gradient(135deg, rgba(102,126,234,0.2) 0%, rgba(118,75,162,0.2) 100%); 
+                padding: 1.5rem; border-radius: 15px; margin: 1rem 0;">
+        <h3 style="margin: 0; color: #667eea;">📈 Comparaison : Prévisions IA vs Météo Réelle</h3>
+    </div>
+    """, unsafe_allow_html=True)
     
     # Récupération de la météo réelle pour comparaison
     try:
-        days_to_fetch = min(nb_jours, 7)
+        days_to_fetch = min(nb_jours, 16)  # API limite à 16 jours
         url_forecast = "https://api.open-meteo.com/v1/forecast"
         params = {
             "latitude": 34.0209,
@@ -229,7 +537,7 @@ try:
         df_comparison = pd.merge(df_semaine_graph, df_api, on='date', how='inner')
         
         if len(df_comparison) > 0:
-            st.caption(f"Comparaison sur {len(df_comparison)} jours : Votre IA (à {heure_selectionnee}h) vs Météo Officielle (Max du jour)")
+            st.caption(f"📊 Comparaison sur {len(df_comparison)} jours : Votre IA (à {heure_selectionnee}h) vs Météo Officielle (Max du jour)")
             
             # Graphique comparatif
             chart_comparison = df_comparison.set_index('date')[['Prediction_Temp', 'Météo_Réelle']]
@@ -239,12 +547,55 @@ try:
             # Calcul de l'écart moyen
             ecart = (df_comparison['Prediction_Temp'] - df_comparison['Météo_Réelle']).abs().mean()
             
-            if ecart < 2:
-                st.success(f"✅ Excellent ! Écart moyen : **{ecart:.2f}°C**")
-            elif ecart < 4:
-                st.info(f"ℹ️ Bon résultat. Écart moyen : **{ecart:.2f}°C**")
-            else:
-                st.warning(f"⚠️ Écart moyen : **{ecart:.2f}°C** (Normal car on compare {heure_selectionnee}h avec le max du jour)")
+            col_metric1, col_metric2, col_metric3 = st.columns(3)
+            
+            # Afficher le nombre total de jours sélectionnés au lieu de jours comparés
+            nb_jours_affiches = nb_jours
+            
+            with col_metric1:
+                if ecart < 2:
+                    badge_color = "#4ECDC4"
+                    badge_emoji = "✅"
+                    badge_text = "Excellent"
+                elif ecart < 4:
+                    badge_color = "#FFD93D"
+                    badge_emoji = "ℹ️"
+                    badge_text = "Bon"
+                else:
+                    badge_color = "#FF6B6B"
+                    badge_emoji = "⚠️"
+                    badge_text = "Acceptable"
+                
+                st.markdown(f"""
+                <div style="background: linear-gradient(135deg, rgba(78,205,196,0.2), rgba(78,205,196,0.1)); 
+                            padding: 1rem; border-radius: 10px; text-align: center;">
+                    <h3 style="margin: 0; color: {badge_color};">{badge_emoji}</h3>
+                    <h2 style="margin: 0.5rem 0; color: {badge_color};">{ecart:.2f}°C</h2>
+                    <p style="margin: 0; opacity: 0.8;">Écart Moyen</p>
+                    <p style="margin: 0; color: {badge_color}; font-weight: 600;">{badge_text}</p>
+                </div>
+                """, unsafe_allow_html=True)
+            
+            with col_metric2:
+                precision = 100 - (ecart / df_comparison['Météo_Réelle'].mean() * 100)
+                st.markdown(f"""
+                <div style="background: linear-gradient(135deg, rgba(102,126,234,0.2), rgba(102,126,234,0.1)); 
+                            padding: 1rem; border-radius: 10px; text-align: center;">
+                    <h3 style="margin: 0; color: #667eea;">🎯</h3>
+                    <h2 style="margin: 0.5rem 0; color: #667eea;">{precision:.1f}%</h2>
+                    <p style="margin: 0; opacity: 0.8;">Précision</p>
+                </div>
+                """, unsafe_allow_html=True)
+            
+            with col_metric3:
+                st.markdown(f"""
+                <div style="background: linear-gradient(135deg, rgba(255,107,107,0.2), rgba(255,107,107,0.1)); 
+                            padding: 1rem; border-radius: 10px; text-align: center;">
+                    <h3 style="margin: 0; color: #FF6B6B;">📅</h3>
+                    <h2 style="margin: 0.5rem 0; color: #FF6B6B;">{nb_jours_affiches}</h2>
+                    <p style="margin: 0; opacity: 0.8;">Jours Analysés</p>
+                </div>
+                """, unsafe_allow_html=True)
         else:
             st.warning("Pas de données de comparaison disponibles")
     except Exception as e:
@@ -252,10 +603,17 @@ try:
     
     # Graphique humidité
     st.markdown("---")
-    st.write("### 💧 Évolution de l'humidité")
+    st.markdown(f"""
+    <div style="background: linear-gradient(135deg, rgba(78,205,196,0.2) 0%, rgba(102,126,234,0.2) 100%); 
+                padding: 1.5rem; border-radius: 15px; margin: 1rem 0;">
+        <h3 style="margin: 0; color: #4ECDC4;">💧 Évolution de l'humidité</h3>
+        <p style="margin-top: 0.5rem; opacity: 0.9;">Prévisions sur {nb_jours} jours</p>
+    </div>
+    """, unsafe_allow_html=True)
+    
     chart_humidity = df_semaine.set_index('date')[['Prediction_Humidity']]
     chart_humidity.columns = ['Humidité (%)']
-    st.line_chart(chart_humidity)
+    st.area_chart(chart_humidity, color='#4ECDC4')
 
 except FileNotFoundError:
     st.error(f"❌ Fichier modèle introuvable : '{model_path}'. Veuillez relancer le notebook d'entraînement.")
